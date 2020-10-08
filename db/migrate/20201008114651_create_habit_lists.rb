@@ -5,7 +5,7 @@ class CreateHabitLists < ActiveRecord::Migration[6.0]
       t.integer :habit_id
       t.string :habit
       t.integer :habit_count
-      t.boolean :habitation
+      t.boolean :habitation, default:false, null:false
 
       t.timestamps
     end
