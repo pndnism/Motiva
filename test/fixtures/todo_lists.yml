@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  class1: MyString
+  class2: MyString
+  todo_no: 1
+  project_no: 1
+  todo: MyString
+  deadline: 2020-12-06
+
+two:
+  class1: MyString
+  class2: MyString
+  todo_no: 1
+  project_no: 1
+  todo: MyString
+  deadline: 2020-12-06

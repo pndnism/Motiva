@@ -1,0 +1,27 @@
+<%= form_with(model: work_list, local: true) do |form| %>
+  <% if work_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(work_list.errors.count, "error") %> prohibited this work_list from being saved:</h2>
+
+      <ul>
+        <% work_list.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :project_no %>
+    <%= form.number_field :project_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :project %>
+    <%= form.text_field :project %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

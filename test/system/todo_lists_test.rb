@@ -1,0 +1,53 @@
+require "application_system_test_case"
+
+class TodoListsTest < ApplicationSystemTestCase
+  setup do
+    @todo_list = todo_lists(:one)
+  end
+
+  test "visiting the index" do
+    visit todo_lists_url
+    assert_selector "h1", text: "Todo Lists"
+  end
+
+  test "creating a Todo list" do
+    visit todo_lists_url
+    click_on "New Todo List"
+
+    fill_in "Class1", with: @todo_list.class1
+    fill_in "Class2", with: @todo_list.class2
+    fill_in "Deadline", with: @todo_list.deadline
+    fill_in "Project no", with: @todo_list.project_no
+    fill_in "Todo", with: @todo_list.todo
+    fill_in "Todo no", with: @todo_list.todo_no
+    click_on "Create Todo list"
+
+    assert_text "Todo list was successfully created"
+    click_on "Back"
+  end
+
+  test "updating a Todo list" do
+    visit todo_lists_url
+    click_on "Edit", match: :first
+
+    fill_in "Class1", with: @todo_list.class1
+    fill_in "Class2", with: @todo_list.class2
+    fill_in "Deadline", with: @todo_list.deadline
+    fill_in "Project no", with: @todo_list.project_no
+    fill_in "Todo", with: @todo_list.todo
+    fill_in "Todo no", with: @todo_list.todo_no
+    click_on "Update Todo list"
+
+    assert_text "Todo list was successfully updated"
+    click_on "Back"
+  end
+
+  test "destroying a Todo list" do
+    visit todo_lists_url
+    page.accept_confirm do
+      click_on "Destroy", match: :first
+    end
+
+    assert_text "Todo list was successfully destroyed"
+  end
+end
