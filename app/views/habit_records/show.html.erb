@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @habit_record.userid %>
+</p>
+
+<p>
+  <strong>Habit no:</strong>
+  <%= @habit_record.habit_no %>
+</p>
+
+<p>
+  <strong>Habit:</strong>
+  <%= @habit_record.habit %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @habit_record.date %>
+</p>
+
+<p>
+  <strong>Done:</strong>
+  <%= @habit_record.done %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @habit_record.count %>
+</p>
+
+<%= link_to 'Edit', edit_habit_record_path(@habit_record) %> |
+<%= link_to 'Back', habit_records_path %>
