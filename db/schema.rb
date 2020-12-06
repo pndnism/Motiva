@@ -10,18 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_29_144820) do
-
-  create_table "todo_lists", force: :cascade do |t|
-    t.string "class1"
-    t.string "class2"
-    t.integer "todo_no"
-    t.integer "project_no"
-    t.string "todo"
-    t.date "deadline"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2020_12_06_070310) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
