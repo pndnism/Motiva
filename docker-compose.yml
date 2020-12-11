@@ -1,0 +1,17 @@
+version: '3.3'                 # docker-composeのversionを指定
+services:
+  db:
+    build: ./       # Dockerfileの置き場所を指定
+    image: mysql:8.0.22
+    restart: always
+    environment:
+      MYSQL_DATABASE: <%= ENV['DATABASE_NAME'] %>
+      MYSQL_USER: <%= ENV['DATABASE_USER'] %>
+      MYSQL_PASSWORD: <%= ENV['DATABASE_PASSWORD'] %>
+      MYSQL_ROOT_PASSWORD: <%= ENV['DATABASE_ROOT_PASSWORD'] %>
+    ports:
+      - "3314:3314"
+    volumes:
+      - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
+      - ./docker/mysql/conf.d:/etc/mysql/conf.d
+      - ./log/mysql:/var/log/mysql
