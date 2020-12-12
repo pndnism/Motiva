@@ -1,23 +1,19 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  database: <%= ENV['DATABASE_NAME'] %>
-  pool: 5
-  username: <%= ENV['DATABASE_USER'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: db
-  port: 3306
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: password # MYSQL_ROOT_PASSWORDと同じにする（後述）
+  host: motiva-db # MySQLのコンテナ名と同じにする（後述）
+
 development:
   <<: *default
-  database: db/development.mysql2
-
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
+  database: motiva-db-dev
 test:
   <<: *default
-  database: db/test.mysql2
-
+  database: motiva-db-test
 production:
   <<: *default
-  database: db/production.mysql2
+  database: motiva-db
+  username: <%= ENV['RAILS_DATABASE_USER'] %>
+  password: <%= ENV['RAILS_DATABASE_PASSWORD'] %>

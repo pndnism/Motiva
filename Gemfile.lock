@@ -204,12 +204,13 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
-  capybara (>= 2.15)
+  capybara (= 3.33.0)
   dotenv-rails
   jbuilder (~> 2.7)
-  listen (~> 3.2)
+  listen (= 3.3.1)
+  loofah (= 2.7.0)
   mysql2 (= 0.5.3)
-  puma (~> 4.1)
+  puma (= 4.3.6)
   rails (~> 6.0.3)
   sass-rails (>= 6)
   selenium-webdriver
@@ -220,6 +221,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
+  zeitwerk (= 2.4.1)
 
 RUBY VERSION
    ruby 2.7.1p83

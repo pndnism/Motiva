@@ -1,22 +1,28 @@
-version: '3.3'                 # docker-composeのversionを指定
+version: '2'
 services:
-  db:
-    build: ./       # Dockerfileの置き場所を指定
-    image: mysql:8.0.22
-    restart: always
+  motiva-db:
+    image: mysql:5.7
     environment:
-      MYSQL_DATABASE: <%= ENV['DATABASE_NAME'] %>
-      MYSQL_USER: <%= ENV['DATABASE_USER'] %>
-      MYSQL_PASSWORD: <%= ENV['DATABASE_PASSWORD'] %>
-      MYSQL_ROOT_PASSWORD: <%= ENV['DATABASE_ROOT_PASSWORD'] %>
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: root
+    volumes:
+      - mysql-data:/var/lib/mysql    #データの永続化のために必要
     ports:
-      - "3306:3306"
-  web:
+      - "4306:3306"  #両方3306でもok。
+
+  motiva-app:
+    tty: true          #コンテナ上でbinding.pryするために必要
+    stdin_open: true   #コンテナ上でbinding.pryするために必要
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
-      - .:/myapp
+      - .:/Motiva    #ローカルのディレクトリをコンテナ上にマウント
+      - bundle:/usr/local/bundle    #bundle installした後buildし直さなくてよくなる
     ports:
       - "3000:3000"
-    depends_on:
-      - db
+    links:
+      - motiva-db
+
+volumes:
+  mysql-data:
+  bundle:      #bundle installした後buildし直さなくてよくなる
