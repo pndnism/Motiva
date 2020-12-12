@@ -12,14 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2020_12_06_094903) do
 
-  create_table "colors", force: :cascade do |t|
+  create_table "colors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category"
     t.string "color"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "habit_lists", force: :cascade do |t|
+  create_table "habit_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "userid"
     t.integer "habit_no"
     t.string "habit"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_12_06_094903) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "habit_records", force: :cascade do |t|
+  create_table "habit_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "userid"
     t.integer "habit_no"
     t.string "habit"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_12_06_094903) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "todo_lists", force: :cascade do |t|
+  create_table "todo_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "class1"
     t.string "class2"
     t.integer "todo_no"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_12_06_094903) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "mail"
     t.string "password"
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2020_12_06_094903) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "work_lists", force: :cascade do |t|
+  create_table "work_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "project_no"
     t.string "project"
     t.datetime "created_at", precision: 6, null: false

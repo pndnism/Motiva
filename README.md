@@ -1,24 +1,54 @@
-# README
+Motiva
+===
+Motivaはタスク管理アプリです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 開発環境
+### 前提となる環境
+- Dockerクライアントがホストマシンにインストールされていること
 
-Things you may want to cover:
+#### macOS での Docker セットアップ
+以下のコマンドを実行後、 Docker.app を起動し、`docker ps` 等にて起動を確認。
 
-* Ruby version
+```bash
+# docker-compose も導入されるはず
+brew cask install docker
+```
 
-* System dependencies
+### 開発環境の構築
+以下で基本的に http://localhost:3000 でアプリにアクセスするまでが行われます。
 
-* Configuration
+```bash
+git clone git@github.com:estie-inc/medamayaki.git
+cd <APPLICATION_ROOT>
+make            # 一番上に定義されている silent-run
+make setup-db   # db:create db:migrate db:seed (最初の一回)
+```
 
-* Database creation
+`make up` で以下のコンテナが立ち上がります。
+- `motiva_app`: Rails アプリ本体
+- `motiva_db`: ローカルDB
 
-* Database initialization
+*Gemfile を更新した場合などはコンテナの再ビルドが必要なため以下を実行すること*
 
-* How to run the test suite
+```bash
+make # コンテナの build も行う
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+コンテナの停止は
 
-* Deployment instructions
+```bash
+make stop
+```
 
-* ...
+* Debug:
+
+デバッグに便利なのは例えば以下。
+
+```bash
+make enter      # motiva_app コンテナに入る
+make enter-db   # motiva_db コンテナに入る
+
+make log        # motiva_app のログを見る
+make log-all    # すべてのコンテナログをみる (logs/development.log ではないので注意)
+...
+```
