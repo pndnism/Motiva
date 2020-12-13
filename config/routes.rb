@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/top' => "home#top"
   resources :colors
   resources :work_lists
   resources :habit_records

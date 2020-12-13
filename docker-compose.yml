@@ -14,15 +14,18 @@ services:
     tty: true          #コンテナ上でbinding.pryするために必要
     stdin_open: true   #コンテナ上でbinding.pryするために必要
     build: .
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    image: motiva_motiva-app:latest
+    command: /bin/sh -c "bundle install && bundle exec rails s -p 3000 -b 0.0.0.0"
     volumes:
       - .:/Motiva    #ローカルのディレクトリをコンテナ上にマウント
       - bundle:/usr/local/bundle    #bundle installした後buildし直さなくてよくなる
+      - gems:/var/app/vendor/bundle
     ports:
       - "3000:3000"
-    links:
+    depends_on:
       - motiva-db
 
 volumes:
   mysql-data:
   bundle:      #bundle installした後buildし直さなくてよくなる
+  gems:
