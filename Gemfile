@@ -57,6 +57,8 @@ gem 'loofah', '2.7.0'
 gem 'capybara', '3.33.0'
 gem 'listen', '3.3.1'
 gem 'bootstrap', '~> 4.1.1'
-gem 'jquery-rails'
 gem 'execjs', '2.7.0'
 gem 'rake', '13.0.1'
+gem "bootstrap-sass", "~>3.3.6"
+gem "jquery-rails"
+gem "jquery-ui-rails"
