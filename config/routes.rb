@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'home/top' => "home#top"
+  get '/top' => "home#top"
   resources :colors
   resources :work_lists
   resources :habit_records
