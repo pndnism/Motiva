@@ -18,7 +18,7 @@ brew cask install docker
 以下で基本的に http://localhost:3000 でアプリにアクセスするまでが行われます。
 
 ```bash
-git clone git@github.com:estie-inc/medamayaki.git
+git clone git@github.com:estie-inc/Motiva.git
 cd <APPLICATION_ROOT>
 make            # 一番上に定義されている silent-run
 make setup-db   # db:create db:migrate db:seed (最初の一回)
