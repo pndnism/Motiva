@@ -1,23 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Class1:</strong>
-  <%= @todo_list.class1 %>
+  <strong>User:</strong>
+  <%= @todo_list.user_id %>
 </p>
 
 <p>
-  <strong>Class2:</strong>
-  <%= @todo_list.class2 %>
-</p>
-
-<p>
-  <strong>Todo no:</strong>
-  <%= @todo_list.todo_no %>
-</p>
-
-<p>
-  <strong>Project no:</strong>
-  <%= @todo_list.project_no %>
+  <strong>Personal todo:</strong>
+  <%= @todo_list.personal_todo_id %>
 </p>
 
 <p>
@@ -28,6 +18,16 @@
 <p>
   <strong>Deadline:</strong>
   <%= @todo_list.deadline %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @todo_list.project_id %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @todo_list.category %>
 </p>
 
 <%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |

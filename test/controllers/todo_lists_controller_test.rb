@@ -17,7 +17,7 @@ class TodoListsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create todo_list" do
     assert_difference('TodoList.count') do
-      post todo_lists_url, params: { todo_list: { class1: @todo_list.class1, class2: @todo_list.class2, deadline: @todo_list.deadline, project_no: @todo_list.project_no, todo: @todo_list.todo, todo_no: @todo_list.todo_no } }
+      post todo_lists_url, params: { todo_list: { category: @todo_list.category, deadline: @todo_list.deadline, personal_todo_id: @todo_list.personal_todo_id, project_id: @todo_list.project_id, todo: @todo_list.todo, user_id: @todo_list.user_id } }
     end
 
     assert_redirected_to todo_list_url(TodoList.last)
@@ -34,7 +34,7 @@ class TodoListsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update todo_list" do
-    patch todo_list_url(@todo_list), params: { todo_list: { class1: @todo_list.class1, class2: @todo_list.class2, deadline: @todo_list.deadline, project_no: @todo_list.project_no, todo: @todo_list.todo, todo_no: @todo_list.todo_no } }
+    patch todo_list_url(@todo_list), params: { todo_list: { category: @todo_list.category, deadline: @todo_list.deadline, personal_todo_id: @todo_list.personal_todo_id, project_id: @todo_list.project_id, todo: @todo_list.todo, user_id: @todo_list.user_id } }
     assert_redirected_to todo_list_url(@todo_list)
   end
 
