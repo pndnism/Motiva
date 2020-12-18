@@ -69,6 +69,6 @@ class HabitListsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def habit_list_params
-      params.require(:habit_list).permit(:userid, :habit_no, :habit, :count, :donehabit)
+      params.require(:habit_list).permit(:user_id, :personal_habit_id, :habit, :habituation)
     end
 end

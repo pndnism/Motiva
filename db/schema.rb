@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_06_094903) do
+ActiveRecord::Schema.define(version: 2020_12_18_095240) do
 
   create_table "colors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category"
@@ -20,33 +20,38 @@ ActiveRecord::Schema.define(version: 2020_12_06_094903) do
   end
 
   create_table "habit_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "userid"
-    t.integer "habit_no"
+    t.bigint "user_id"
+    t.bigint "personal_habit_id"
     t.string "habit"
-    t.integer "count"
-    t.integer "donehabit"
+    t.integer "habituation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "habit_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "userid"
-    t.integer "habit_no"
-    t.string "habit"
+    t.bigint "habit_id"
     t.date "date"
     t.integer "done"
-    t.integer "count"
+    t.bigint "count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "project_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "personal_project_id"
+    t.string "project"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "todo_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "class1"
-    t.string "class2"
-    t.integer "todo_no"
-    t.integer "project_no"
+    t.bigint "user_id"
+    t.bigint "personal_todo_id"
     t.string "todo"
     t.date "deadline"
+    t.bigint "project_id"
+    t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -55,13 +60,6 @@ ActiveRecord::Schema.define(version: 2020_12_06_094903) do
     t.string "name"
     t.string "mail"
     t.string "password"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "work_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "project_no"
-    t.string "project"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -14,11 +14,10 @@ class HabitListsTest < ApplicationSystemTestCase
     visit habit_lists_url
     click_on "New Habit List"
 
-    fill_in "Count", with: @habit_list.count
-    fill_in "Donehabit", with: @habit_list.donehabit
     fill_in "Habit", with: @habit_list.habit
-    fill_in "Habit no", with: @habit_list.habit_no
-    fill_in "Userid", with: @habit_list.userid
+    fill_in "Habituation", with: @habit_list.habituation
+    fill_in "Personal habit", with: @habit_list.personal_habit_id
+    fill_in "User", with: @habit_list.user_id
     click_on "Create Habit list"
 
     assert_text "Habit list was successfully created"
@@ -29,11 +28,10 @@ class HabitListsTest < ApplicationSystemTestCase
     visit habit_lists_url
     click_on "Edit", match: :first
 
-    fill_in "Count", with: @habit_list.count
-    fill_in "Donehabit", with: @habit_list.donehabit
     fill_in "Habit", with: @habit_list.habit
-    fill_in "Habit no", with: @habit_list.habit_no
-    fill_in "Userid", with: @habit_list.userid
+    fill_in "Habituation", with: @habit_list.habituation
+    fill_in "Personal habit", with: @habit_list.personal_habit_id
+    fill_in "User", with: @habit_list.user_id
     click_on "Update Habit list"
 
     assert_text "Habit list was successfully updated"
