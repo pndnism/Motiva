@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_18_095240) do
+ActiveRecord::Schema.define(version: 2020_12_19_043327) do
 
   create_table "colors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2020_12_18_095240) do
     t.bigint "user_id"
     t.bigint "personal_project_id"
     t.string "project"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "test_as", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "personal_habit_id"
+    t.string "habit"
+    t.integer "habituation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
