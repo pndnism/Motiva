@@ -14,12 +14,12 @@ class TodoListsTest < ApplicationSystemTestCase
     visit todo_lists_url
     click_on "New Todo List"
 
-    fill_in "Class1", with: @todo_list.class1
-    fill_in "Class2", with: @todo_list.class2
+    fill_in "Category", with: @todo_list.category
     fill_in "Deadline", with: @todo_list.deadline
-    fill_in "Project no", with: @todo_list.project_no
+    fill_in "Personal todo", with: @todo_list.personal_todo_id
+    fill_in "Project", with: @todo_list.project_id
     fill_in "Todo", with: @todo_list.todo
-    fill_in "Todo no", with: @todo_list.todo_no
+    fill_in "User", with: @todo_list.user_id
     click_on "Create Todo list"
 
     assert_text "Todo list was successfully created"
@@ -30,12 +30,12 @@ class TodoListsTest < ApplicationSystemTestCase
     visit todo_lists_url
     click_on "Edit", match: :first
 
-    fill_in "Class1", with: @todo_list.class1
-    fill_in "Class2", with: @todo_list.class2
+    fill_in "Category", with: @todo_list.category
     fill_in "Deadline", with: @todo_list.deadline
-    fill_in "Project no", with: @todo_list.project_no
+    fill_in "Personal todo", with: @todo_list.personal_todo_id
+    fill_in "Project", with: @todo_list.project_id
     fill_in "Todo", with: @todo_list.todo
-    fill_in "Todo no", with: @todo_list.todo_no
+    fill_in "User", with: @todo_list.user_id
     click_on "Update Todo list"
 
     assert_text "Todo list was successfully updated"

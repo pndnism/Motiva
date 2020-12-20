@@ -17,9 +17,7 @@ class HabitRecordsTest < ApplicationSystemTestCase
     fill_in "Count", with: @habit_record.count
     fill_in "Date", with: @habit_record.date
     fill_in "Done", with: @habit_record.done
-    fill_in "Habit", with: @habit_record.habit
-    fill_in "Habit no", with: @habit_record.habit_no
-    fill_in "Userid", with: @habit_record.userid
+    fill_in "Habit", with: @habit_record.habit_id
     click_on "Create Habit record"
 
     assert_text "Habit record was successfully created"
@@ -33,9 +31,7 @@ class HabitRecordsTest < ApplicationSystemTestCase
     fill_in "Count", with: @habit_record.count
     fill_in "Date", with: @habit_record.date
     fill_in "Done", with: @habit_record.done
-    fill_in "Habit", with: @habit_record.habit
-    fill_in "Habit no", with: @habit_record.habit_no
-    fill_in "Userid", with: @habit_record.userid
+    fill_in "Habit", with: @habit_record.habit_id
     click_on "Update Habit record"
 
     assert_text "Habit record was successfully updated"

@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Userid:</strong>
-  <%= @habit_list.userid %>
+  <strong>User:</strong>
+  <%= @habit_list.user_id %>
 </p>
 
 <p>
-  <strong>Habit no:</strong>
-  <%= @habit_list.habit_no %>
+  <strong>Personal habit:</strong>
+  <%= @habit_list.personal_habit_id %>
 </p>
 
 <p>
@@ -16,13 +16,8 @@
 </p>
 
 <p>
-  <strong>Count:</strong>
-  <%= @habit_list.count %>
-</p>
-
-<p>
-  <strong>Donehabit:</strong>
-  <%= @habit_list.donehabit %>
+  <strong>Habituation:</strong>
+  <%= @habit_list.habituation %>
 </p>
 
 <%= link_to 'Edit', edit_habit_list_path(@habit_list) %> |

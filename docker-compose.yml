@@ -17,8 +17,8 @@ services:
     image: motiva_motiva-app:latest
     command: /bin/sh -c "bundle install && bundle exec rails s -p 3000 -b 0.0.0.0"
     volumes:
-      - .:/Motiva    #ローカルのディレクトリをコンテナ上にマウント
-      - bundle:/usr/local/bundle    #bundle installした後buildし直さなくてよくなる
+      - .:/var/app   #ローカルのディレクトリをコンテナ上にマウント
+#      - bundle:/var/app/vendor/bundle    #bundle installした後buildし直さなくてよくなる
       - gems:/var/app/vendor/bundle
     ports:
       - "3000:3000"

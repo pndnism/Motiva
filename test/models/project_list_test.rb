@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class WorkListTest < ActiveSupport::TestCase
+class ProjectListTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

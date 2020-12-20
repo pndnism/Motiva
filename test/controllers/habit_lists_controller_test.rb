@@ -17,7 +17,7 @@ class HabitListsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create habit_list" do
     assert_difference('HabitList.count') do
-      post habit_lists_url, params: { habit_list: { count: @habit_list.count, donehabit: @habit_list.donehabit, habit: @habit_list.habit, habit_no: @habit_list.habit_no, userid: @habit_list.userid } }
+      post habit_lists_url, params: { habit_list: { habit: @habit_list.habit, habituation: @habit_list.habituation, personal_habit_id: @habit_list.personal_habit_id, user_id: @habit_list.user_id } }
     end
 
     assert_redirected_to habit_list_url(HabitList.last)
@@ -34,7 +34,7 @@ class HabitListsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update habit_list" do
-    patch habit_list_url(@habit_list), params: { habit_list: { count: @habit_list.count, donehabit: @habit_list.donehabit, habit: @habit_list.habit, habit_no: @habit_list.habit_no, userid: @habit_list.userid } }
+    patch habit_list_url(@habit_list), params: { habit_list: { habit: @habit_list.habit, habituation: @habit_list.habituation, personal_habit_id: @habit_list.personal_habit_id, user_id: @habit_list.user_id } }
     assert_redirected_to habit_list_url(@habit_list)
   end
 

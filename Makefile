@@ -26,7 +26,7 @@ update-lint-todos:
 log:
 	docker-compose logs -f motiva-app
 log-db:
-	docker-compose logs -f mysql
+	docker-compose logs -f motiva-db
 log-all:
 	docker-compose logs -f
 clean-temp:
