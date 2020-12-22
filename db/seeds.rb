@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+users = ["yamada", "abe", "tanaka", "yave", "kitani"]
+users.each_with_index do |user, i|
+  User.create(
+    email: "#{i + 1}@gamil.com",
+    encrypted_password: "password"
+  )
+end
