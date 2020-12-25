@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get '/top' => "home#top"
+  root to: "home#top"
+
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'   
@@ -13,8 +16,7 @@ Rails.application.routes.draw do
   resources :project_lists
   resources :todo_lists
   resources :users
-  get '/top' => "home#top"
-  root to: "home#top"
+
   resources :colors
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

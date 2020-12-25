@@ -17,6 +17,8 @@ setup-db:
 	docker-compose exec motiva-app bin/rails db:create db:migrate db:seed
 migrate:
 	docker-compose exec motiva-app bin/rails db:migrate
+seed:
+	docker-compose exec motiva-app bin/rails db:seed
 enter:
 	docker-compose exec motiva-app /bin/bash
 enter-db:
