@@ -56,7 +56,7 @@ body {
       position: sticky;
     }
   }
-  
+
   .sidebar .nav-link {
     font-weight: 500;
     color: #333;
@@ -71,10 +71,11 @@ body {
     color: #007bff;
   }
   
-  .sidebar .nav-link:hover .feather,
+  /*.sidebar .nav-link:hover .feather,
   .sidebar .nav-link.active .feather {
     color: inherit;
   }
+  */
   
   .sidebar-heading {
     font-size: .75rem;
