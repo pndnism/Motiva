@@ -11,100 +11,105 @@
     <%= stylesheet_link_tag href="application", :media => "all" %>
     <!-- <%= csrf_meta_tags %> -->
     <!-- <%= csp_meta_tag %> -->
-
   </head>
-  <!-- header -->
-  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Motiva</a>
-    <p style="color:white ;font-family:cursive" >No one motivates your daily life but you.</p>
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">SignOut</a>
-        </li>
-      </ul>
-  </nav>
-
-  <!-- container -->
-  <div class="container-fluid">
-    <div class="row">
-
-  <!-- side menu -->
-  <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-    <div class="sidebar-sticky">
-      <ul class="nav flex-column">
-        <li class="nav-item">
-            <%= link_to '/top', class: "nav-link" do %>
-              <span data-feather="home"></span>  
-              HOME          
-            <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to '/project_lists', class: "nav-link" do %>
-          <span data-feather="file"></span>  
-          WORK          
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to '/habit_lists', class: "nav-link" do %>
-          <span data-feather="coffee"></span>  
-          LIFE
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to '/todo_lists', class: "nav-link" do %>
-          <span data-feather="check-circle"></span>  
-          TO DO         
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span data-feather="bar-chart-2"></span>
-            REPORT
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span data-feather="layers"></span>
-            INTEGRATION
-          </a>
-        </li>
-      </ul>
-
-      <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-        <span>UTILITIES</span>
-      </h6>
-      <ul class="nav flex-column mb-2">
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span data-feather="github"></span>
-          ACCOUNT
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span data-feather="settings"></span>
-          SETTING
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span data-feather="pocket"></span>
-          POLICY
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </body>
-</html>
+    <!-- わからん -->
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+  
+    <!-- header -->
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Motiva</a>
+      <p style="color:white ;font-family:cursive" >No one motivates your daily life but you.</p>
+        <ul class="navbar-nav px-3">
+          <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">SignOut</a>
+          </li>
+        </ul>
+    </nav>
 
-<!-- Icons -->
-<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-<script>
-  feather.replace()
-</script>
+    <!-- container -->
+    <div class="container-fluid">
+      <div class="row">
+
+    <!-- side menu -->
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+              <%= link_to '/top', class: "nav-link" do %>
+                <span data-feather="home"></span>  
+                HOME          
+              <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to '/project_lists', class: "nav-link" do %>
+            <span data-feather="file"></span>  
+            WORK          
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to '/habit_lists', class: "nav-link" do %>
+            <span data-feather="coffee"></span>  
+            LIFE
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to '/todo_lists', class: "nav-link" do %>
+            <span data-feather="check-circle"></span>  
+            TO DO         
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              REPORT
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              INTEGRATION
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>UTILITIES</span>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="github"></span>
+            ACCOUNT
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="settings"></span>
+            SETTING
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="pocket"></span>
+            POLICY
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <%= yield %>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+  <body>
+</html>
