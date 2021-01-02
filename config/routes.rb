@@ -1,16 +1,19 @@
 Rails.application.routes.draw do
+
+  devise_scope :user do
+    root :to => "devise/sessions#new"
+    get "sign_in", :to => "users/sessions#new"
+    get "sign_out", :to => "users/sessions#destroy" 
+  end
+
+  get 'logins/home'
   get '/top' => "home#top"
-  root to: "home#top"
 
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'   
   } 
 
-  devise_scope :user do
-    get "sign_in", :to => "users/sessions#new"
-    get "sign_out", :to => "users/sessions#destroy" 
-  end
   resources :habit_lists
   resources :habit_records
   resources :project_lists
