@@ -27,7 +27,7 @@
       <!-- task card -->
       <div class=row id="main_menu">
       <!-- 一旦user_idを手打ちで設定 -->
-        <% @project_lists.where(user_id: 6).ids.each do |project_id| %>
+        <% @project_lists.where(user_id: current_user.id).ids.each do |project_id| %>
           <!-- No.1 -->
           <div class="col-lg-4 col-md-6 my-2" id="card1">
             <div class="card" style="background-color:#fff">
