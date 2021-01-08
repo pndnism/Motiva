@@ -7,147 +7,460 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/lifestyle.css">
-
+    <link rel="stylesheet" href="css/workstyle.css">
   </head>
  
 <body>
-  <!-- ナビゲーションバー -->
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Motiva</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#">TOP</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="life_page.html">LIFE</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="work_page.html">WORK</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="todo_page.html">TODO<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+<!-- わからん -->
+  <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+    <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+
+<!-- header -->
+  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Motiva</a>
+    <p style="color:white ;font-family:cursive" >No one motivates your daily life but you.</p>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="login_page.html">SignOut</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
   </nav>
 
-   <!-- 本文 -->
-   <div class="container">
-    <div class="row">
+<!-- container -->
+<div class="container-fluid">
+  <div class="row">
 
-      <!-- タスクカード -->
-     <div class="col-lg-12">
-      <!-- 一列目 -->
-      <div class="row">
-       <div class="col-md-6">
-        <div class="card" style="background-color:#fff">
-         <div class="card-body">
-          <h5><u>HABIT</u></h5>
-          <h5><u>////</u></h5>
+    <!-- side menu -->
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="home"></span>
+             TOP
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="work_page.html">
+              <span data-feather="file"></span>
+              WORK
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="life_page.html">
+              <span data-feather="coffee"></span>
+             LIFE
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="todo_page.html">
+              <span data-feather="check-circle"></span>
+              TO DO
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              REPORT
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              INTEGRATION
+            </a>
+          </li>
+        </ul>
 
-
-          <table class="table table-borderless table-hover">
-            <thead>
-              <tr>
-                <th scope="col">TODO</th>
-                <th scope="col">Deadline</th>
-                <th scope="col">Done</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">料理教室申しこみ</th>
-                <td>10/05</td>
-                <td>  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(3.0)">
-                </div></td>
-              </tr>
-              <tr>
-                <th scope="row">水道代支払い</th>
-                <td>10/15</td>
-                <td>  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(3.0)">
-                </div></td>
-              </tr>
-              <tr>
-                <th scope="row">新幹線予約</th>
-                <td>10/25</td>
-                <td>  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(3.0)">
-                </div></td>
-              </tr>
-            </tbody>
-          </table>
-         </div>
-        </div>
-       </div>
-
-       <div class="col-md-6">
-        <div class="card" style="background-color:white">
-         <div class="card-body">
-          <h5><u>WORK</u></h5>
-          <h5><u>////</u></h5>
-
-
-
-          <table class="table table-borderless table-hover">
-            <thead>
-              <tr>
-                <th scope="col">TODO</th>
-                <th scope="col">Deadline</th>
-                <th scope="col">Done</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">A社商談会</th>
-                <td>10/05</td>
-                <td>  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(3.0)">
-                </div></td>
-              </tr>
-              <tr>
-                <th scope="row">B社懇親準備</th>
-                <td>10/15</td>
-                <td>  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(3.0)">
-                </div></td>
-              </tr>
-              <tr>
-                <th scope="row">C社資料作成</th>
-                <td>10/25</td>
-                <td>  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(3.0)">
-                </div></td>
-              </tr>
-            </tbody>
-          </table>
-         </div>
-        </div>
-       </div>
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>UTILITIES</span>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="github"></span>
+            ACCOUNT
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="settings"></span>
+            SETTING
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="pocket"></span>
+            POLICY
+            </a>
+          </li>
+        </ul>
       </div>
+    </nav>
 
+    <!-- colum -->
+    <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
+
+      <!-- title & btn -->
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">YOUR TODO</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group mr-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary" id="add_btn">＋</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">ー</button>
+          </div>
+          <div>
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span data-feather="calendar"></span>
+              HISTORY
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Last 7 days</a>
+              <a class="dropdown-item" href="#">Last 2 week</a>
+              <a class="dropdown-item" href="#">Last month</a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+      <!-- life card -->
+      <div class=row id="main_menu">
+        <!-- habit card -->
+        <div class="col-lg-7 col-md-12 my-2" id="card1">
+          <div class="card" style="background-color:#fff">
+            <div class="card-header py-2">
+              <span style="font-size:16pt">Your habitation</span>
+              <div class="btn-group mr-2 float-right">
+                <button type="button" class="btn btn-sm btn-outline-secondary" id="habitadd_btn">＋</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">ー</button>
+              </div>
+            </div>
+            <!-- table -->
+            <div class="card-body py-0">
+              <table class="table table-borderless table-hover" id="habitTable">
+              <thead>
+                <tr>
+                <th scope="col">Habit</th>
+                <th scope="col">Today</th>
+                <th scope="col">Yesterday</th>
+                <th scope="col">2days before</th>
+                <th scope="col">3days before</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                <th scope="row">Running</th>
+                <td>  
+                  <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td>  
+                  <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td> 
+                  <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td> 
+                  <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                </tr>
+                <tr>
+                <th scope="row">Cooking</th>
+                <td>  
+                  <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td>  
+                  <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td> 
+                  <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td> 
+                  <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                </tr>
+                <tr>
+                <th scope="row">Meditation</th>
+                <td>  
+                  <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td>  
+                  <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td> 
+                  <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td> 
+                  <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                </tr>                
+              </tbody>
+              </table>
+              <a class="text-primary float-right" href="#">Already habitation(5habit)</a>
+            </div>
+            <div class="card-footer">
+              <!-- btn -->
+              <div class="btn-group mr-2 float-right">
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#testModal1" id="workButton1">edit</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#testModal2" id="workButton2">delete</button>
+              </div>
+              <!-- edit -->
+              <div class="modal fade" id="testModal1" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">project title</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                <div class="modal-body">
+                  <label>tasks</label>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
+                </div>
+                </div>
+                </div>
+              </div>
+              <!-- delete -->
+              <div class="modal fade" id="testModal2" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <label>Would you delete this task?</label>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                      <button type="button" class="btn btn-danger"  id="delete_btn">Yes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+        <!--to do card -->
+        <div class="col-lg-5 col-md-12 my-2" id="todocard">
+          <div class="card" style="background-color:#fff">
+            <div class="card-header py-2">
+              <span style="font-size:16pt">ToDoList</span>
+              <div class="btn-group mr-2 float-right">
+                <button type="button" class="btn btn-sm btn-outline-secondary" id="todoadd_btn">＋</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">ー</button>
+              </div>
+            </div>
+            <!-- table -->
+            <div class="card-body py-0">
+              <table class="table table-borderless table-hover" id=todoTable>
+              <thead>
+                <tr>
+                <th scope="col">TODO</th>
+                <th scope="col">Deadline</th>
+                <th scope="col">Done</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                <th scope="row">水道代支払い</th>
+                <td>10/05</td>
+                <td>  <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                </div></td>
+                </tr>
+                <tr>
+                <th scope="row">新幹線チケット</th>
+                <td>10/15</td>
+                <td>  <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                </div></td>
+                </tr>
+                <tr>
+                <th scope="row">トイレットペーパー購入</th>
+                <td>10/25</td>
+                <td>  <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                </div></td>
+                </tr>
+              </tbody>
+              </table>
+              <a class="text-primary float-right" href="#">Already done(100tasks)</a>
+            </div>
+            <div class="card-footer">
+              <!-- btn -->
+              <div class="btn-group mr-2 float-right">
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#testModal1" id="workButton1">edit</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#testModal2" id="workButton2">delete</button>
+              </div>
+              <!-- edit -->
+              <div class="modal fade" id="testModal1" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">project title</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                <div class="modal-body">
+                  <label>tasks</label>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+                  <button type="button" class="btn btn-danger">save</button>
+                </div>
+                </div>
+                </div>
+              </div>
+              <!-- delete -->
+              <div class="modal fade" id="testModal2" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <label>Would you delete this task?</label>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                      <button type="button" class="btn btn-danger">Yes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
 </div>
+
+<!-- Icons -->
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
   
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/app.js"></script>
+    <!-- <script src="js/app.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
+    <!-- add card -->
+    <script>
+      $(function() {
+        $("#add_btn").click(function() {
+          $("#main_menu").append('<div class="card col-lg-4 col-md-6 my-2"> add your task</div>');
+        });
+      });
+    </script>
+    <!-- remove card -->
+    <script>
+      $(function(){
+        $("#delete_btn").on("click", function(){
+        $('#testModal2').modal('hide');
+        $("#card1").remove();
+        });
+      });
+    </script>
+    <!-- checkbox -->
+    <script>
+      $(":checkbox").click(function() {
+      if ($(this).is(":checked")){
+        $(this).closest("tr").css("text-decoration", "line-through");
+      }
+      else {
+        $(this).closest("tr").css("text-decoration", "none");
+      }
+      });
+    </script>
+    <!-- add habitation -->
+    <script>
+      $(function() {
+        $("#habitadd_btn").click(function() {
+          $("#habitTable").append(
+            `
+            <tr>
+                <th scope="row">Habit</th>
+                <td>  
+                  <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td>  
+                  <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td> 
+                  <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td> 
+                  <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+              </tr>
+            `
+            );
+        });
+      });
+    </script>
+    <!-- add todolist -->
+    <script>
+      $(function() {
+        $("#todoadd_btn").click(function() {
+          $("#todoTable").append(
+            `
+            <tr><th>todo</th><td>date</td>
+            <td><div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)"></div></td></tr>
+            `
+            );
+        });
+      });
+    </script>
   </body>
 </html>
