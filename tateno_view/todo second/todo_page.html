@@ -8,6 +8,17 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/workstyle.css">
+
+    <style>
+      .work_todo{
+        font-weight:bold;
+        color:rgba(255, 0, 0, 0.692);
+      }
+      .life_todo{
+        font-weight:bold;
+        color:rgba(0, 0, 255, 0.692);
+      }
+    </style>
   </head>
  
 <body>
@@ -109,8 +120,9 @@
         <h1 class="h2">YOUR TODO</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary" id="add_btn">＋</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">ー</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" id="life_btn"><span data-feather="coffee"></span>LIFE</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" id="work_btn"><span data-feather="file"></span>WORK</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" id="both_btn">BOTH</button>
           </div>
           <div>
             <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -126,247 +138,128 @@
         </div>
         </div>
 
-      <!-- life card -->
-      <div class=row id="main_menu">
-        <!-- habit card -->
-        <div class="col-lg-7 col-md-12 my-2" id="card1">
-          <div class="card" style="background-color:#fff">
-            <div class="card-header py-2">
-              <span style="font-size:16pt">Your habitation</span>
-              <div class="btn-group mr-2 float-right">
-                <button type="button" class="btn btn-sm btn-outline-secondary" id="habitadd_btn">＋</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">ー</button>
-              </div>
-            </div>
-            <!-- table -->
-            <div class="card-body py-0">
-              <table class="table table-borderless table-hover" id="habitTable">
-              <thead>
-                <tr>
-                <th scope="col">Habit</th>
-                <th scope="col">Today</th>
-                <th scope="col">Yesterday</th>
-                <th scope="col">2days before</th>
-                <th scope="col">3days before</th>
+      <!-- list -->
+      <!-- today -->
+      <div style="font-size:20pt;color:rgb(85, 85, 85);">Today!!!! 2021/10/05</div>
+        <table class="table table-borderless table-hover" id=todoTable>
+          <thead>
+            <tr>
+            <th scope="col" style="width:20%;">Life/Work</th>
+            <th scope="col" style="width:40%;">TODO</th>
+            <th scope="col" style="width:20%;">Deadline</th>
+            <th scope="col" style="width:20%;">Done</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="work_list">
+            <td class="work_todo">Work</td>
+            <td>biz session</td>
+            <td>10/05</td>
+            <td>  <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+            </div></td>
+            </tr>
+            <tr class="work_list">
+            <td class="work_todo">Work</td>
+            <td>mtg</td>
+            <td>10/05</td>
+            <td>  <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+            </div></td>
+            </tr>
+          </tbody>
+          </table>
+          <!-- this week -->
+          <div style="font-size:20pt;color:rgb(85, 85, 85);">this week 2021/10/12</div>
+          <table class="table table-borderless table-hover" id=todoTable>
+            <thead>
+              <tr>
+                <th scope="col" style="width:20%;">Life/Work</th>
+                <th scope="col" style="width:40%;">TODO</th>
+                <th scope="col" style="width:20%;">Deadline</th>
+                <th scope="col" style="width:20%;">Done</th>
                 </tr>
-              </thead>
-              <tbody>
-                <tr>
-                <th scope="row">Running</th>
-                <td>  
-                  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                  </div>
-                </td>
-                <td>  
-                  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                  </div>
-                </td>
-                <td> 
-                  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                  </div>
-                </td>
-                <td> 
-                  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                  </div>
-                </td>
+            </thead>
+            <tbody>
+              <tr class="life_list">
+              <td class="life_todo">Life</td>
+              <td>ticket</td>
+              <td>10/10</td>
+              <td>  <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+              </div></td>
+              </tr>
+              <tr class="work_list">
+              <td class="work_todo">Work</td>
+              <td>pay the bill</td>
+              <td>10/11</td>
+              <td>  <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+              </div></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- next week -->
+          <div style="font-size:20pt;color:rgb(85, 85, 85);">Next week 2021/10/19</div>
+          <table class="table table-borderless table-hover" id=todoTable>
+            <thead>
+              <tr>
+                <th scope="col" style="width:20%;">Life/Work</th>
+                <th scope="col" style="width:40%;">TODO</th>
+                <th scope="col" style="width:20%;">Deadline</th>
+                <th scope="col" style="width:20%;">Done</th>
                 </tr>
-                <tr>
-                <th scope="row">Cooking</th>
-                <td>  
-                  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                  </div>
-                </td>
-                <td>  
-                  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                  </div>
-                </td>
-                <td> 
-                  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                  </div>
-                </td>
-                <td> 
-                  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                  </div>
-                </td>
+            </thead>
+            <tbody>
+              <tr class="life_list">
+              <td class="life_todo">Life</td>
+              <td>Go to dinner</td>
+              <td>10/18</td>
+              <td>  <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+              </div></td>
+              </tr>
+              <tr class="life_list">
+              <td class="life_todo">Life</td>
+              <td>pay the water bill</td>
+              <td>10/11</td>
+              <td>  <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+              </div></td>
+              </tr>
+            </tbody>
+          </table>   
+          <!-- next week -->
+          <div style="font-size:20pt;color:rgb(85, 85, 85);">Next week 2021/10/19</div>
+          <table class="table table-borderless table-hover" id=todoTable>
+            <thead>
+              <tr>
+                <th scope="col" style="width:20%;">Life/Work</th>
+                <th scope="col" style="width:40%;">TODO</th>
+                <th scope="col" style="width:20%;">Deadline</th>
+                <th scope="col" style="width:20%;">Done</th>
                 </tr>
-                <tr>
-                <th scope="row">Meditation</th>
-                <td>  
-                  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                  </div>
-                </td>
-                <td>  
-                  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                  </div>
-                </td>
-                <td> 
-                  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                  </div>
-                </td>
-                <td> 
-                  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                  </div>
-                </td>
-                </tr>                
-              </tbody>
-              </table>
-              <a class="text-primary float-right" href="#">Already habitation(5habit)</a>
-            </div>
-            <div class="card-footer">
-              <!-- btn -->
-              <div class="btn-group mr-2 float-right">
-                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#testModal1" id="workButton1">edit</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#testModal2" id="workButton2">delete</button>
-              </div>
-              <!-- edit -->
-              <div class="modal fade" id="testModal1" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h4 class="modal-title" id="myModalLabel">project title</h4>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                <div class="modal-body">
-                  <label>tasks</label>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
-                </div>
-                </div>
-                </div>
-              </div>
-              <!-- delete -->
-              <div class="modal fade" id="testModal2" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-body">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                      <label>Would you delete this task?</label>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                      <button type="button" class="btn btn-danger"  id="delete_btn">Yes</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-            </div>
-          </div>
-        </div>
-
-        <!--to do card -->
-        <div class="col-lg-5 col-md-12 my-2" id="todocard">
-          <div class="card" style="background-color:#fff">
-            <div class="card-header py-2">
-              <span style="font-size:16pt">ToDoList</span>
-              <div class="btn-group mr-2 float-right">
-                <button type="button" class="btn btn-sm btn-outline-secondary" id="todoadd_btn">＋</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">ー</button>
-              </div>
-            </div>
-            <!-- table -->
-            <div class="card-body py-0">
-              <table class="table table-borderless table-hover" id=todoTable>
-              <thead>
-                <tr>
-                <th scope="col">TODO</th>
-                <th scope="col">Deadline</th>
-                <th scope="col">Done</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                <th scope="row">水道代支払い</th>
-                <td>10/05</td>
-                <td>  <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                </div></td>
-                </tr>
-                <tr>
-                <th scope="row">新幹線チケット</th>
-                <td>10/15</td>
-                <td>  <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                </div></td>
-                </tr>
-                <tr>
-                <th scope="row">トイレットペーパー購入</th>
-                <td>10/25</td>
-                <td>  <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                </div></td>
-                </tr>
-              </tbody>
-              </table>
-              <a class="text-primary float-right" href="#">Already done(100tasks)</a>
-            </div>
-            <div class="card-footer">
-              <!-- btn -->
-              <div class="btn-group mr-2 float-right">
-                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#testModal1" id="workButton1">edit</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#testModal2" id="workButton2">delete</button>
-              </div>
-              <!-- edit -->
-              <div class="modal fade" id="testModal1" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h4 class="modal-title" id="myModalLabel">project title</h4>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                <div class="modal-body">
-                  <label>tasks</label>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
-                  <button type="button" class="btn btn-danger">save</button>
-                </div>
-                </div>
-                </div>
-              </div>
-              <!-- delete -->
-              <div class="modal fade" id="testModal2" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-body">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                      <label>Would you delete this task?</label>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                      <button type="button" class="btn btn-danger">Yes</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-            </div>
-          </div>
-        </div>
+            </thead>
+            <tbody>
+              <tr class="life_list">
+              <td class="life_todo">Life</td>
+              <td>Go to dinner</td>
+              <td>10/18</td>
+              <td>  <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+              </div></td>
+              </tr>
+              <tr class="work_list">
+              <td class="work_todo">Work</td>
+              <td>pay the water bill</td>
+              <td>10/11</td>
+              <td>  <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+              </div></td>
+              </tr>
+            </tbody>
+          </table>             
+      </div>
 
       </div>
     </main>
@@ -386,23 +279,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-    <!-- add card -->
-    <script>
-      $(function() {
-        $("#add_btn").click(function() {
-          $("#main_menu").append('<div class="card col-lg-4 col-md-6 my-2"> add your task</div>');
-        });
-      });
-    </script>
-    <!-- remove card -->
-    <script>
-      $(function(){
-        $("#delete_btn").on("click", function(){
-        $('#testModal2').modal('hide');
-        $("#card1").remove();
-        });
-      });
-    </script>
     <!-- checkbox -->
     <script>
       $(":checkbox").click(function() {
@@ -414,53 +290,22 @@
       }
       });
     </script>
-    <!-- add habitation -->
+    <!-- btn -->
     <script>
-      $(function() {
-        $("#habitadd_btn").click(function() {
-          $("#habitTable").append(
-            `
-            <tr>
-                <th scope="row">Habit</th>
-                <td>  
-                  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                  </div>
-                </td>
-                <td>  
-                  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                  </div>
-                </td>
-                <td> 
-                  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                  </div>
-                </td>
-                <td> 
-                  <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                  </div>
-                </td>
-              </tr>
-            `
-            );
+        $("#life_btn").click(function() {
+          $(".life_list").show("slow");
+          $(".work_list").hide("slow");      
         });
+      $("#work_btn").click(function() {
+        $(".life_list").hide("slow");
+        $(".work_list").show("slow");      
+      });
+      $("#both_btn").click(function() {
+        $(".life_list").show("slow");
+        $(".work_list").show("slow");      
       });
     </script>
-    <!-- add todolist -->
-    <script>
-      $(function() {
-        $("#todoadd_btn").click(function() {
-          $("#todoTable").append(
-            `
-            <tr><th>todo</th><td>date</td>
-            <td><div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)"></div></td></tr>
-            `
-            );
-        });
-      });
-    </script>
+
+
   </body>
 </html>
