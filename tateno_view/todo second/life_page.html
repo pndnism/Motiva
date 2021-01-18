@@ -24,7 +24,7 @@
     <p style="color:white ;font-family:cursive" >No one motivates your daily life but you.</p>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">SignOut</a>
+          <a class="nav-link" href="login_page.html">SignOut</a>
         </li>
       </ul>
   </nav>
@@ -56,7 +56,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="todo_page.html">
               <span data-feather="check-circle"></span>
               TO DO
             </a>
@@ -222,6 +222,13 @@
                 </tr>                
               </tbody>
               </table>
+              <div class="text-primary AlreadyDone" style="cursor:pointer;">Already habitation(5habits)</div>
+              <ul class="AlreadyDone_contents" style="list-style:none;">
+                <li><a></a></li>
+                <li><a>gym</a></li>
+                <li><a>early-rising</a></li>
+                <li><a>契約更改</a></li>
+              </ul>
             </div>
             <div class="card-footer">
               <!-- btn -->
@@ -316,6 +323,13 @@
                 </tr>
               </tbody>
               </table>
+                <div class="text-primary AlreadyDone" style="cursor:pointer;">Already done(100tasks)</div>
+                <ul class="AlreadyDone_contents" style="list-style:none;">
+                  <li><a></a></li>
+                  <li><a>ゴミ出し</a></li>
+                  <li><a>電気代支払い</a></li>
+                  <li><a>契約更改</a></li>
+                </ul>
             </div>
             <div class="card-footer">
               <!-- btn -->
@@ -460,5 +474,18 @@
         });
       });
     </script>
+    <!-- Already Done -->
+    <script>
+      $(function(){
+         $("ul.AlreadyDone_contents").hide();
+        $("div.AlreadyDone").click(function(){
+          if($("+ul",this).css("display")=="none"){
+             $("+ul",this).show();
+            }else{$("+ul",this).hide(); 
+              };
+        });
+      });
+    </script>
+  
   </body>
 </html>
