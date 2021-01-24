@@ -148,6 +148,7 @@
                 <th scope="col">Yesterday</th>
                 <th scope="col">2days before</th>
                 <th scope="col">3days before</th>
+                <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
@@ -173,6 +174,11 @@
                   <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
                   </div>
                 </td>
+                <td>
+                  <button type="button" class="close delete_task" aria-label="Close" style="visibility: hidden;">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </td>
                 </tr>
                 <tr>
                 <th scope="row">Cooking</th>
@@ -196,6 +202,11 @@
                   <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
                   </div>
                 </td>
+                <td>
+                  <button type="button" class="close delete_task" aria-label="Close" style="visibility: hidden;">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </td>
                 </tr>
                 <tr>
                 <th scope="row">Meditation</th>
@@ -218,6 +229,11 @@
                   <div class="form-group form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
                   </div>
+                </td>
+                <td>
+                  <button type="button" class="close delete_task" aria-label="Close" style="visibility: hidden;">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </td>
                 </tr>                
               </tbody>
@@ -297,29 +313,51 @@
                 <th scope="col">TODO</th>
                 <th scope="col">Deadline</th>
                 <th scope="col">Done</th>
+                <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                 <th scope="row">水道代支払い</th>
                 <td>10/05</td>
-                <td>  <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                </div></td>
+                <td>  
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td>
+                  <button type="button" class="close delete_task" aria-label="Close" style="visibility: hidden;">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </td>
                 </tr>
                 <tr>
                 <th scope="row">新幹線チケット</th>
                 <td>10/15</td>
-                <td>  <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                </div></td>
+                <td>  
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td>
+                  <button type="button" class="close delete_task" aria-label="Close" style="visibility: hidden;">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </td>
                 </tr>
                 <tr>
                 <th scope="row">トイレットペーパー購入</th>
                 <td>10/25</td>
-                <td>  <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                </div></td>
+                <td>  
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td>
+                  <button type="button" class="close delete_task" aria-label="Close" style="visibility: hidden;">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </td>
                 </tr>
               </tbody>
               </table>
@@ -483,6 +521,23 @@
              $("+ul",this).show();
             }else{$("+ul",this).hide(); 
               };
+        });
+      });
+    </script>
+    <!-- remove task -->
+    <script>
+      $('.delete_task').click(function() {
+        let row = $(this).closest("tr").remove();
+          $(row).remove();
+      });
+    </script>
+    <!-- mouseover delete_task -->
+    <script>
+      $(function(){
+        $("tr").mouseover(function(){
+          $(this).find('button').css("visibility", "visible")
+        }).mouseout(function(){
+          $(this).find('button').css("visibility", "hidden")
         });
       });
     </script>
