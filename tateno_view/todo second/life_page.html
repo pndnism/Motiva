@@ -239,12 +239,46 @@
               </tbody>
               </table>
               <div class="text-primary AlreadyDone" style="cursor:pointer;">Already habitation(5habits)</div>
-              <ul class="AlreadyDone_contents" style="list-style:none;">
-                <li><a></a></li>
-                <li><a>gym</a></li>
-                <li><a>early-rising</a></li>
-                <li><a>契約更改</a></li>
-              </ul>
+              <table class="table table-borderless table-hover AlreadyDone_contents">
+                <thead>
+                  <tr>
+                    <th scope="col">Habitation</th>
+                    <th scope="col">Done</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>gym</td>
+                    <td>10/20</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <button type="button" class="close delete_task" aria-label="Close" style="visibility: hidden;">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </td>
+
+                  </tr>
+                  <tr>
+                    <td>walking</td>
+                    <td>10/25</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <button type="button" class="close delete_task" aria-label="Close" style="visibility: hidden;">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
             </div>
             <div class="card-footer">
               <!-- btn -->
@@ -322,7 +356,7 @@
                 <td>10/05</td>
                 <td>  
                   <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                    <input type="checkbox" class="form-check-input todo_fin" id="exampleCheck1" style="transform:scale(2.0)">
                   </div>
                 </td>
                 <td>
@@ -336,7 +370,7 @@
                 <td>10/15</td>
                 <td>  
                   <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                    <input type="checkbox" class="form-check-input todo_fin" id="exampleCheck1" style="transform:scale(2.0)">
                   </div>
                 </td>
                 <td>
@@ -350,7 +384,7 @@
                 <td>10/25</td>
                 <td>  
                   <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                    <input type="checkbox" class="form-check-input todo_fin" id="exampleCheck1" style="transform:scale(2.0)">
                   </div>
                 </td>
                 <td>
@@ -362,12 +396,37 @@
               </tbody>
               </table>
                 <div class="text-primary AlreadyDone" style="cursor:pointer;">Already done(100tasks)</div>
-                <ul class="AlreadyDone_contents" style="list-style:none;">
-                  <li><a></a></li>
-                  <li><a>ゴミ出し</a></li>
-                  <li><a>電気代支払い</a></li>
-                  <li><a>契約更改</a></li>
-                </ul>
+                <table class="table table-borderless table-hover AlreadyDone_contents">
+                  <thead>
+                    <tr>
+                      <th scope="col">Todo</th>
+                      <th scope="col">Done</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>pay bill</td>
+                      <td>10/20</td>
+                      <td></td>
+                      <td>
+                        <button type="button" class="close delete_task" aria-label="Close" style="visibility: hidden;">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>reservation</td>
+                      <td>10/20</td>
+                      <td></td>
+                      <td>
+                        <button type="button" class="close delete_task" aria-label="Close" style="visibility: hidden;">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+  
             </div>
             <div class="card-footer">
               <!-- btn -->
@@ -515,18 +574,18 @@
     <!-- Already Done -->
     <script>
       $(function(){
-         $("ul.AlreadyDone_contents").hide();
+          $("table.AlreadyDone_contents").hide();
         $("div.AlreadyDone").click(function(){
-          if($("+ul",this).css("display")=="none"){
-             $("+ul",this).show();
-            }else{$("+ul",this).hide(); 
+          if($("+table",this).css("display")=="none"){
+              $("+table",this).show();
+            }else{$("+table",this).hide(); 
               };
         });
       });
     </script>
     <!-- todo done→delete -->
     <script>
-      $(':checkbox').click(function() {
+      $('.todo_fin').click(function() {
         let row = $(this).closest("tr").remove();
           $(row).remove();
       });
