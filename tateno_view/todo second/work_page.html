@@ -132,7 +132,7 @@
         <div class="col-lg-4 col-md-6 my-2" id="card1">
           <div class="card" style="background-color:#fff">
             <div class="card-header bg-primary py-2">
-              <span style="font-size:16pt">Title of your task</span>
+              <span style="font-size:16pt" class="editable">Title of your task</span>
               <span class="float-right" style="font-size:16pt">MM/dd</span>
             </div>
             <!-- table -->
@@ -148,8 +148,8 @@
               </thead>
               <tbody>
                 <tr>
-                <th scope="row">Biz session</th>
-                <td>10/05</td>
+                <td scope="row" class="editable">Biz session</td>
+                <td class="editable">10/05</td>
                 <td> 
                   <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
@@ -162,8 +162,8 @@
                 </td>
                 </tr>
                 <tr>
-                <th scope="row">Business report</th>
-                <td>10/15</td>
+                <td scope="row" class="editable">Business report</td>
+                <td class="editable">10/15</td>
                 <td>   
                   <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
@@ -176,8 +176,8 @@
                 </td>
                 </tr>
                 <tr>
-                <th scope="row">anual meeting</th>
-                <td>10/25</td>
+                <td scope="row" class="editable">anual meeting</td>
+                <td class="editable">10/25</td>
                 <td>  
                   <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
@@ -195,7 +195,7 @@
             <div class="card-footer">
               <!-- btn -->
               <div class="btn-group mr-2 float-right">
-                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#edit_modal" id="edit_button">edit</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">edit</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#delete_modal" id="delete_button">delete</button>
               </div>
             </div>
@@ -660,6 +660,25 @@
           $(this).find('button').css("visibility", "hidden")
         });
       });
+    </script>
+    <!-- その場入力　edit in place -->
+    <script>
+    $(function(){
+      $('.editable').click(function(){
+          if(!$(this).hasClass('on')){
+              $(this).addClass('on');
+              var txt = $(this).text();
+              $(this).html('<input type="text" value="'+txt+'" />');
+              $('.editable > input').focus().blur(function(){
+                  var inputVal = $(this).val();
+                  if(inputVal===''){
+                      inputVal = this.defaultValue;
+                  };
+                  $(this).parent().removeClass('on').text(inputVal);
+              });
+          };
+      });
+    });
     </script>
   </body>
 </html>
