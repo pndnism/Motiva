@@ -137,7 +137,7 @@
             </div>
             <!-- table -->
             <div class="card-body py-0">
-              <table class="table table-borderless table-hover">
+              <table class="table table-borderless table-hover task_list">
               <thead>
                 <tr>
                 <th scope="col">TODO</th>
@@ -148,7 +148,7 @@
               </thead>
               <tbody>
                 <tr>
-                <td scope="row" class="editable">Biz session</td>
+                <th scope="row" class="editable">Biz session</th>
                 <td class="editable">10/05</td>
                 <td> 
                   <div class="form-group form-check">
@@ -162,7 +162,7 @@
                 </td>
                 </tr>
                 <tr>
-                <td scope="row" class="editable">Business report</td>
+                <th scope="row" class="editable">Business report</th>
                 <td class="editable">10/15</td>
                 <td>   
                   <div class="form-group form-check">
@@ -176,7 +176,7 @@
                 </td>
                 </tr>
                 <tr>
-                <td scope="row" class="editable">anual meeting</td>
+                <th scope="row" class="editable">anual meeting</th>
                 <td class="editable">10/25</td>
                 <td>  
                   <div class="form-group form-check">
@@ -195,30 +195,10 @@
             <div class="card-footer">
               <!-- btn -->
               <div class="btn-group mr-2 float-right">
-                <button type="button" class="btn btn-sm btn-outline-secondary">edit</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary add_task_btn">add task</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#delete_modal" id="delete_button">delete</button>
               </div>
             </div>
-          </div>
-        </div>
-        <!-- edit -->
-        <div class="modal fade" id="edit_modal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">project title</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-          <div class="modal-body">
-            <label>tasks</label>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
-          </div>
-          </div>
           </div>
         </div>
         <!-- delete -->
@@ -661,10 +641,33 @@
         });
       });
     </script>
+    <!-- add todo -->
+    <script>
+      $(function() {
+        $(".add_task_btn").click(function() {
+          $(".task_list").append(
+            `
+            <tr>
+            <th class="editable">todo</th>
+            <td class="editable">date</td>
+            <td><div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)"></div>
+            </td>
+            <td class="delete">
+              <button type="button" class="close delete_task" aria-label="Close" style="visibility: hidden;">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </td>
+            </tr>
+            `
+            );
+        });
+      });
+    </script>  
     <!-- その場入力　edit in place -->
     <script>
     $(function(){
-      $('.editable').click(function(){
+      $(document).on("click", ".editable", function(){
           if(!$(this).hasClass('on')){
               $(this).addClass('on');
               var txt = $(this).text();
@@ -680,6 +683,7 @@
       });
     });
     </script>
+
   </body>
 </html>
 
