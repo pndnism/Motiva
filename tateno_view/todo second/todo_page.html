@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/workstyle.css">
+
+    <style>
+      .work_todo{
+        font-weight:bold;
+        color:rgba(255, 0, 0, 0.692);
+      }
+      .life_todo{
+        font-weight:bold;
+        color:rgba(0, 0, 255, 0.692);
+      }
+    </style>
+  </head>
+ 
+<body>
+<!-- わからん -->
+  <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+    <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+
+<!-- header -->
+  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Motiva</a>
+    <p style="color:white ;font-family:cursive" >No one motivates your daily life but you.</p>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="login_page.html">SignOut</a>
+        </li>
+      </ul>
+  </nav>
+
+<!-- container -->
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- side menu -->
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="top_page.html">
+              <span data-feather="home"></span>
+             TOP
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="work_page.html">
+              <span data-feather="file"></span>
+              WORK
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="life_page.html">
+              <span data-feather="coffee"></span>
+             LIFE
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="todo_page.html">
+              <span data-feather="check-circle"></span>
+              TO DO
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              REPORT
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              INTEGRATION
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>UTILITIES</span>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="github"></span>
+            ACCOUNT
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="settings"></span>
+            SETTING
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="pocket"></span>
+            POLICY
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- colum -->
+    <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
+
+      <!-- title & btn -->
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">YOUR TODO</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group mr-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary" id="life_btn"><span data-feather="coffee"></span>LIFE</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" id="work_btn"><span data-feather="file"></span>WORK</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" id="both_btn">BOTH</button>
+          </div>
+          <div>
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span data-feather="calendar"></span>
+              HISTORY
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Last 7 days</a>
+              <a class="dropdown-item" href="#">Last 2 week</a>
+              <a class="dropdown-item" href="#">Last month</a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+      <!-- list -->
+      <!-- today -->
+      <div style="font-size:20pt;color:rgb(85, 85, 85);">Today!!!! 2021/10/05</div>
+        <table class="table table-borderless table-hover" id=todoTable>
+          <thead>
+            <tr>
+            <th scope="col" style="width:20%;">Life/Work</th>
+            <th scope="col" style="width:40%;">TODO</th>
+            <th scope="col" style="width:20%;">Deadline</th>
+            <th scope="col" style="width:20%;">Done</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="work_list">
+            <td class="work_todo">Work</td>
+            <td>biz session</td>
+            <td>10/05</td>
+            <td>  <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+            </div></td>
+            </tr>
+            <tr class="work_list">
+            <td class="work_todo">Work</td>
+            <td>mtg</td>
+            <td>10/05</td>
+            <td>  <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+            </div></td>
+            </tr>
+          </tbody>
+          </table>
+          <!-- this week -->
+          <div style="font-size:20pt;color:rgb(85, 85, 85);">this week 2021/10/12</div>
+          <table class="table table-borderless table-hover" id=todoTable>
+            <thead>
+              <tr>
+                <th scope="col" style="width:20%;">Life/Work</th>
+                <th scope="col" style="width:40%;">TODO</th>
+                <th scope="col" style="width:20%;">Deadline</th>
+                <th scope="col" style="width:20%;">Done</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr class="life_list">
+              <td class="life_todo">Life</td>
+              <td>ticket</td>
+              <td>10/10</td>
+              <td>  <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+              </div></td>
+              </tr>
+              <tr class="work_list">
+              <td class="work_todo">Work</td>
+              <td>pay the bill</td>
+              <td>10/11</td>
+              <td>  <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+              </div></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- next week -->
+          <div style="font-size:20pt;color:rgb(85, 85, 85);">Next week 2021/10/19</div>
+          <table class="table table-borderless table-hover" id=todoTable>
+            <thead>
+              <tr>
+                <th scope="col" style="width:20%;">Life/Work</th>
+                <th scope="col" style="width:40%;">TODO</th>
+                <th scope="col" style="width:20%;">Deadline</th>
+                <th scope="col" style="width:20%;">Done</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr class="life_list">
+              <td class="life_todo">Life</td>
+              <td>Go to dinner</td>
+              <td>10/18</td>
+              <td>  <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+              </div></td>
+              </tr>
+              <tr class="life_list">
+              <td class="life_todo">Life</td>
+              <td>pay the water bill</td>
+              <td>10/11</td>
+              <td>  <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+              </div></td>
+              </tr>
+            </tbody>
+          </table>   
+          <!-- next week -->
+          <div style="font-size:20pt;color:rgb(85, 85, 85);">Next week 2021/10/19</div>
+          <table class="table table-borderless table-hover" id=todoTable>
+            <thead>
+              <tr>
+                <th scope="col" style="width:20%;">Life/Work</th>
+                <th scope="col" style="width:40%;">TODO</th>
+                <th scope="col" style="width:20%;">Deadline</th>
+                <th scope="col" style="width:20%;">Done</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr class="life_list">
+              <td class="life_todo">Life</td>
+              <td>Go to dinner</td>
+              <td>10/18</td>
+              <td>  <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+              </div></td>
+              </tr>
+              <tr class="work_list">
+              <td class="work_todo">Work</td>
+              <td>pay the water bill</td>
+              <td>10/11</td>
+              <td>  <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+              </div></td>
+              </tr>
+            </tbody>
+          </table>             
+      </div>
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Icons -->
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="js/app.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- checkbox -->
+    <script>
+      $(":checkbox").click(function() {
+      if ($(this).is(":checked")){
+        $(this).closest("tr").css("text-decoration", "line-through");
+      }
+      else {
+        $(this).closest("tr").css("text-decoration", "none");
+      }
+      });
+    </script>
+    <!-- btn -->
+    <script>
+        $("#life_btn").click(function() {
+          $(".life_list").show("slow");
+          $(".work_list").hide("slow");      
+        });
+      $("#work_btn").click(function() {
+        $(".life_list").hide("slow");
+        $(".work_list").show("slow");      
+      });
+      $("#both_btn").click(function() {
+        $(".life_list").show("slow");
+        $(".work_list").show("slow");      
+      });
+    </script>
+
+
+  </body>
+</html>

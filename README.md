@@ -32,6 +32,7 @@ make setup-db   # db:create db:migrate db:seed (最初の一回)
 
 ```bash
 make # コンテナの build も行う
+# makeでserverが立ち上がらない場合、tmp/pids/server.pidを削除してください
 ```
 
 コンテナの停止は
