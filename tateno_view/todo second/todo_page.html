@@ -7,18 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/workstyle.css">
-
-    <style>
-      .work_todo{
-        font-weight:bold;
-        color:rgba(255, 0, 0, 0.692);
-      }
-      .life_todo{
-        font-weight:bold;
-        color:rgba(0, 0, 255, 0.692);
-      }
-    </style>
+    <link rel="stylesheet" href="css/base_style.css">
   </head>
  
 <body>
@@ -32,7 +21,7 @@
 <!-- header -->
   <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Motiva</a>
-    <p style="color:white ;font-family:cursive" >No one motivates your daily life but you.</p>
+    <p>No one motivates your daily life but you.</p>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
           <a class="nav-link" href="login_page.html">SignOut</a>
@@ -139,39 +128,42 @@
         </div>
 
       <!-- list -->
-      <!-- today -->
-      <div style="font-size:20pt;color:rgb(85, 85, 85);">Today!!!! <div id="today"></div></div>
+     <div class="todo_list">
+        <!-- today -->
+        <div style="font-size:20pt;color:rgb(85, 85, 85);">Today!!!! <div id="today"></div>
+        </div>
         <table class="table table-borderless table-hover" id=todoTable>
-          <thead>
-            <tr>
-            <th scope="col" style="width:20%;">Life/Work</th>
-            <th scope="col" style="width:40%;">TODO</th>
-            <th scope="col" style="width:20%;">Deadline</th>
-            <th scope="col" style="width:20%;">Done</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="work_list">
-            <td class="work_todo">Work</td>
-            <td>biz session</td>
-            <td>10/05</td>
-            <td>  <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-            </div></td>
-            </tr>
-            <tr class="work_list">
-            <td class="work_todo">Work</td>
-            <td>mtg</td>
-            <td>10/05</td>
-            <td>  <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-            </div></td>
-            </tr>
-          </tbody>
-          </table>
-          <!-- this week -->
-          <div style="font-size:20pt;color:rgb(85, 85, 85);">this week <div id="thisweek"></div></div>
-          <table class="table table-borderless table-hover" id=todoTable>
+            <thead>
+              <tr>
+              <th scope="col" style="width:20%;">Life/Work</th>
+              <th scope="col" style="width:40%;">TODO</th>
+              <th scope="col" style="width:20%;">Deadline</th>
+              <th scope="col" style="width:20%;">Done</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="work_list">
+              <td class="work_todo">Work</td>
+              <td>biz session</td>
+              <td>10/05</td>
+              <td>  <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+              </div></td>
+              </tr>
+              <tr class="work_list">
+              <td class="work_todo">Work</td>
+              <td>mtg</td>
+              <td>10/05</td>
+              <td>  <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+              </div></td>
+              </tr>
+            </tbody>
+        </table>
+        <!-- this week -->
+        <div style="font-size:20pt;color:rgb(85, 85, 85);">this week <div id="thisweek"></div>
+        </div>
+        <table class="table table-borderless table-hover" id=todoTable>
             <thead>
               <tr>
                 <th scope="col" style="width:20%;">Life/Work</th>
@@ -198,10 +190,11 @@
               </div></td>
               </tr>
             </tbody>
-          </table>
-          <!-- next week -->
-          <div style="font-size:20pt;color:rgb(85, 85, 85);">Next week<div id="nextweek"></div></div>
-          <table class="table table-borderless table-hover" id=todoTable>
+        </table>
+        <!-- next week -->
+        <div style="font-size:20pt;color:rgb(85, 85, 85);">Next week<div id="nextweek"></div>
+        </div>
+        <table class="table table-borderless table-hover" id=todoTable>
             <thead>
               <tr>
                 <th scope="col" style="width:20%;">Life/Work</th>
@@ -228,10 +221,11 @@
               </div></td>
               </tr>
             </tbody>
-          </table>   
-          <!-- next week -->
-          <div style="font-size:20pt;color:rgb(85, 85, 85);"><div id="thismonth"></div></div>
-          <table class="table table-borderless table-hover" id=todoTable>
+        </table>   
+        <!-- next next week -->
+        <div style="font-size:20pt;color:rgb(85, 85, 85);"><div id="thismonth"></div>
+        </div>
+        <table class="table table-borderless table-hover" id=todoTable>
             <thead>
               <tr>
                 <th scope="col" style="width:20%;">Life/Work</th>
@@ -258,9 +252,7 @@
               </div></td>
               </tr>
             </tbody>
-          </table>             
-      </div>
-
+        </table>    
       </div>
     </main>
   </div>
