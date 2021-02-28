@@ -132,12 +132,12 @@
         <div class="col-lg-4 col-md-6 my-2" id="card1">
           <div class="card" style="background-color:#fff">
             <div class="card-header bg-primary py-2">
-              <span style="font-size:16pt">Title of your task</span>
+              <span style="font-size:16pt" class="editable">Title of your task</span>
               <span class="float-right" style="font-size:16pt">MM/dd</span>
             </div>
             <!-- table -->
             <div class="card-body py-0">
-              <table class="table table-borderless table-hover">
+              <table class="table table-borderless table-hover task_list">
               <thead>
                 <tr>
                 <th scope="col">TODO</th>
@@ -148,8 +148,8 @@
               </thead>
               <tbody>
                 <tr>
-                <th scope="row">Biz session</th>
-                <td>10/05</td>
+                <th scope="row" class="editable">Biz session</th>
+                <td class="editable">10/05</td>
                 <td> 
                   <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
@@ -162,8 +162,8 @@
                 </td>
                 </tr>
                 <tr>
-                <th scope="row">Business report</th>
-                <td>10/15</td>
+                <th scope="row" class="editable">Business report</th>
+                <td class="editable">10/15</td>
                 <td>   
                   <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
@@ -176,8 +176,8 @@
                 </td>
                 </tr>
                 <tr>
-                <th scope="row">anual meeting</th>
-                <td>10/25</td>
+                <th scope="row" class="editable">anual meeting</th>
+                <td class="editable">10/25</td>
                 <td>  
                   <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
@@ -195,30 +195,10 @@
             <div class="card-footer">
               <!-- btn -->
               <div class="btn-group mr-2 float-right">
-                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#edit_modal" id="edit_button">edit</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary add_task_btn">add task</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#delete_modal" id="delete_button">delete</button>
               </div>
             </div>
-          </div>
-        </div>
-        <!-- edit -->
-        <div class="modal fade" id="edit_modal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">project title</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-          <div class="modal-body">
-            <label>tasks</label>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
-          </div>
-          </div>
           </div>
         </div>
         <!-- delete -->
@@ -661,6 +641,49 @@
         });
       });
     </script>
+    <!-- add todo -->
+    <script>
+      $(function() {
+        $(".add_task_btn").click(function() {
+          $(".task_list").append(
+            `
+            <tr>
+            <th class="editable">todo</th>
+            <td class="editable">date</td>
+            <td><div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)"></div>
+            </td>
+            <td class="delete">
+              <button type="button" class="close delete_task" aria-label="Close" style="visibility: hidden;">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </td>
+            </tr>
+            `
+            );
+        });
+      });
+    </script>  
+    <!-- その場入力　edit in place -->
+    <script>
+    $(function(){
+      $(document).on("click", ".editable", function(){
+          if(!$(this).hasClass('on')){
+              $(this).addClass('on');
+              var txt = $(this).text();
+              $(this).html('<input type="text" value="'+txt+'" />');
+              $('.editable > input').focus().blur(function(){
+                  var inputVal = $(this).val();
+                  if(inputVal===''){
+                      inputVal = this.defaultValue;
+                  };
+                  $(this).parent().removeClass('on').text(inputVal);
+              });
+          };
+      });
+    });
+    </script>
+
   </body>
 </html>
 
