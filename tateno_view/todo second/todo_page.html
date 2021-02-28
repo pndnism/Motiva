@@ -140,7 +140,7 @@
 
       <!-- list -->
       <!-- today -->
-      <div style="font-size:20pt;color:rgb(85, 85, 85);">Today!!!! 2021/10/05</div>
+      <div style="font-size:20pt;color:rgb(85, 85, 85);">Today!!!! <div id="today"></div></div>
         <table class="table table-borderless table-hover" id=todoTable>
           <thead>
             <tr>
@@ -170,7 +170,7 @@
           </tbody>
           </table>
           <!-- this week -->
-          <div style="font-size:20pt;color:rgb(85, 85, 85);">this week 2021/10/12</div>
+          <div style="font-size:20pt;color:rgb(85, 85, 85);">this week <div id="thisweek"></div></div>
           <table class="table table-borderless table-hover" id=todoTable>
             <thead>
               <tr>
@@ -200,7 +200,7 @@
             </tbody>
           </table>
           <!-- next week -->
-          <div style="font-size:20pt;color:rgb(85, 85, 85);">Next week 2021/10/19</div>
+          <div style="font-size:20pt;color:rgb(85, 85, 85);">Next week<div id="nextweek"></div></div>
           <table class="table table-borderless table-hover" id=todoTable>
             <thead>
               <tr>
@@ -230,7 +230,7 @@
             </tbody>
           </table>   
           <!-- next week -->
-          <div style="font-size:20pt;color:rgb(85, 85, 85);">Next week 2021/10/19</div>
+          <div style="font-size:20pt;color:rgb(85, 85, 85);"><div id="thismonth"></div></div>
           <table class="table table-borderless table-hover" id=todoTable>
             <thead>
               <tr>
@@ -304,6 +304,39 @@
         $(".life_list").show("slow");
         $(".work_list").show("slow");      
       });
+    </script>
+    <!-- date -->
+    <script>
+      $(function(){
+        var now = new Date();
+        var y = now.getFullYear();
+        var m = now.getMonth() + 1;
+        var d = now.getDate();
+        var w = now.getDay();
+        var wd = ['日', '月', '火', '水', '木', '金', '土'];
+          $('#today').text(y + '年' + m + '月' + d + '日');
+        now.setDate(now.getDate() + 7);
+        var ty = now.getFullYear();
+        var tm = now.getMonth() + 1;
+        var td = now.getDate();
+        var tw = now.getDay();
+        var twd = ['日', '月', '火', '水', '木', '金', '土'];
+          $('#thisweek').text(ty + '年' + tm + '月' + td + '日');
+        now.setDate(now.getDate() + 7);
+        var ny = now.getFullYear();
+        var nm = now.getMonth() + 1;
+        var nd = now.getDate();
+        var nw = now.getDay();
+        var nwd = ['日', '月', '火', '水', '木', '金', '土'];
+          $('#nextweek').text(ny + '年' + nm + '月' + nd + '日');
+          now.setDate(now.getDate() + 14);
+        var tmy = now.getFullYear();
+        var tmm = now.getMonth() + 1;
+        var tmd = now.getDate();
+        var tmw = now.getDay();
+        var tmwd = ['日', '月', '火', '水', '木', '金', '土'];
+          $('#thismonth').text(tmy + '年' + tmm + '月' + tmd + '日');
+        });
     </script>
 
 
