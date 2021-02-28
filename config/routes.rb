@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   devise_scope :user do
     root :to => "users/sessions#new"
     get "sign_in", :to => "users/sessions#new"
@@ -15,10 +14,12 @@ Rails.application.routes.draw do
     :sessions => 'users/sessions'   
   } 
 
-  resources :habit_lists
+  resources :project_todos
+  resources :projects
+  resources :todos
+  resources :habits
+  resources :categories
   resources :habit_records
-  resources :project_lists
-  resources :todo_lists
   resources :users
 
   resources :colors
