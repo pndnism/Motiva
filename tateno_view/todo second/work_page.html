@@ -131,7 +131,7 @@
         <!-- No.1 -->
         <div class="col-lg-4 col-md-6 my-2" id="card1">
           <div class="card" style="background-color:#fff">
-            <div class="card-header py-2">
+            <div class="card-header bg-primary py-2">
               <span style="font-size:16pt">Title of your task</span>
               <span class="float-right" style="font-size:16pt">MM/dd</span>
             </div>
@@ -143,29 +143,51 @@
                 <th scope="col">TODO</th>
                 <th scope="col">Deadline</th>
                 <th scope="col">Done</th>
+                <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                 <th scope="row">Biz session</th>
                 <td>10/05</td>
-                <td>  <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                </div></td>
+                <td> 
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td class="delete">
+                  <button type="button" class="close delete_task" aria-label="Close" style="visibility: hidden;">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </td>
                 </tr>
                 <tr>
                 <th scope="row">Business report</th>
                 <td>10/15</td>
-                <td>  <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                </div></td>
+                <td>   
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td>
+                  <button type="button" class="close delete_task" aria-label="Close" style="visibility: hidden;">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </td>
                 </tr>
                 <tr>
                 <th scope="row">anual meeting</th>
                 <td>10/25</td>
-                <td>  <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
-                </div></td>
+                <td>  
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" style="transform:scale(2.0)">
+                  </div>
+                </td>
+                <td>
+                  <button type="button" class="close delete_task" aria-label="Close" style="visibility: hidden;">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </td>
                 </tr>
               </tbody>
               </table>
@@ -173,48 +195,46 @@
             <div class="card-footer">
               <!-- btn -->
               <div class="btn-group mr-2 float-right">
-                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#testModal1" id="workButton1">edit</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#testModal2" id="workButton2">delete</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#edit_modal" id="edit_button">edit</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#delete_modal" id="delete_button">delete</button>
               </div>
-              <!-- edit -->
-              <div class="modal fade" id="testModal1" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h4 class="modal-title" id="myModalLabel">project title</h4>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                <div class="modal-body">
-                  <label>tasks</label>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
-                </div>
-                </div>
-                </div>
+            </div>
+          </div>
+        </div>
+        <!-- edit -->
+        <div class="modal fade" id="edit_modal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">project title</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-              <!-- delete -->
-              <div class="modal fade" id="testModal2" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-body">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                      <label>Would you delete this task?</label>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                      <button type="button" class="btn btn-danger"  id="delete_btn">Yes</button>
-                    </div>
-                  </div>
-                </div>
+          <div class="modal-body">
+            <label>tasks</label>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
+          </div>
+          </div>
+          </div>
+        </div>
+        <!-- delete -->
+        <div class="modal fade" id="delete_modal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <label>Would you delete this task?</label>
               </div>
-
-
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-danger"  id="delete_button_fin">Yes</button>
+              </div>
             </div>
           </div>
         </div>
@@ -309,8 +329,6 @@
             </div>
           </div>
         </div>
-
-
          <!--No.3 -->
          <div class="col-lg-4 col-md-6 my-2">
           <div class="card" style="background-color:#fff">
@@ -609,10 +627,17 @@
     <!-- remove card -->
     <script>
       $(function(){
-        $("#delete_btn").on("click", function(){
-        $('#testModal2').modal('hide');
+        $("#delete_button_fin").on("click", function(){
+        $('#delete_modal').modal('hide');
         $("#card1").remove();
         });
+      });
+    </script>
+    <!-- remove task -->
+    <script>
+      $('.delete_task').click(function() {
+        let row = $(this).closest("tr").remove();
+          $(row).remove();
       });
     </script>
     <!-- checkbox -->
@@ -624,6 +649,16 @@
       else {
         $(this).closest("tr").css("text-decoration", "none");
       }
+      });
+    </script>
+    <!-- mouseover delete_task -->
+    <script>
+      $(function(){
+        $("tr").mouseover(function(){
+          $(this).find('button').css("visibility", "visible")
+        }).mouseout(function(){
+          $(this).find('button').css("visibility", "hidden")
+        });
       });
     </script>
   </body>
