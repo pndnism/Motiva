@@ -27,19 +27,22 @@
         <p style="font-family:Comic Sans MS;"> Let's motivate your daily life</p>
       </div>
       <!-- form -->
-      <div class="form-label-group">
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputEmail">mail address</label>
+      <div class="mb-3">
+        <label for="email">mail address</label>
+        <input type="email" class="form-control" id="email" placeholder="you@example.com">
+        <div class="invalid-feedback">
+          Please enter a valid email address for shipping updates.
+        </div>
       </div>
-      <div class="form-label-group">
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <div class="form-label-group mb-3">
         <label for="inputPassword">password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
       </div>
       <div class="checkbox mb-3">
         <label><input type="checkbox" value="remember-me"> save</label>
       </div> 
-      <button class="btn btn-lg btn-primary btn-block" type="submit" href="top_page.html">Sign in</button>
-      <p> If you don't have any account, <a href="#">register here</a></p>
+      <a href="top_page.html" class="btn btn-lg btn-primary btn-block" type="submit" href="top_page.html">Sign in</a>
+      <p> If you don't have any account, <a href="register_page.html">register here</a></p>
       <p class="mt-5 mb-3 text-muted text-center">&copy; 2020</p>
     </form>
 
