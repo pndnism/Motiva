@@ -120,6 +120,11 @@ body {
     font-size:16pt;
   }
 
+  .card-body{
+    height:240px;
+    overflow: scroll;
+  }
+
   /* todo_page & top_page box*/
 
   .todo_list #today,#thisweek,#nextweek{
