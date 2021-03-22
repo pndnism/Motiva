@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-22T11:55:37.362Z" agent="5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36" etag="OkRaQqIGx9S2pPViREC8" version="14.4.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-22T12:32:22.888Z" agent="5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36" etag="GIO9egMKPPqWHd-oB1u4" version="14.4.8" type="github">
   <diagram id="yz9vEp8fzlAOeCrYcoD_" name="ページ1">
     <mxGraphModel dx="957" dy="572" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -88,7 +88,7 @@
         <mxCell id="vgZee3NAbd-REzqfM-sp-38" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" parent="vgZee3NAbd-REzqfM-sp-37" vertex="1">
           <mxGeometry width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="vgZee3NAbd-REzqfM-sp-39" value="habit" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="vgZee3NAbd-REzqfM-sp-37" vertex="1">
+        <mxCell id="vgZee3NAbd-REzqfM-sp-39" value="habit_content" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="vgZee3NAbd-REzqfM-sp-37" vertex="1">
           <mxGeometry x="30" width="150" height="30" as="geometry" />
         </mxCell>
         <mxCell id="vgZee3NAbd-REzqfM-sp-57" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="vgZee3NAbd-REzqfM-sp-27" vertex="1">
