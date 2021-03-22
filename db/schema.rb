@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2021_01_25_023332) do
 
   create_table "habits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "habit"
+    t.string "habit_content"
     t.integer "habituation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2021_01_25_023332) do
 
   create_table "todos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "todo"
+    t.string "todo_content"
     t.date "deadline"
     t.bigint "category_id"
     t.integer "done"
