@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'users/index'
   get 'logins/home'
   get '/top' => "home#top"
 
 
-
+  
 
   resources :project_todos
   resources :projects
