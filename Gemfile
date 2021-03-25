@@ -61,3 +61,4 @@ gem 'rake', '13.0.1'
 gem "bootstrap-sass", "~>3.4.1"
 gem "jquery-rails"
 gem "jquery-ui-rails"
+gem "bcrypt"
