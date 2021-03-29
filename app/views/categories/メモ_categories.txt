@@ -1,0 +1,1 @@
+メモ：categoriesのviewフォルダは後ほど丸ごと消す

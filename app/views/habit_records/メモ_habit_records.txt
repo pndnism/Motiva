@@ -1,0 +1,1 @@
+メモ：habit_recordsのviewフォルダは後ほど丸ごと消す
