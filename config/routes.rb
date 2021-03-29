@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   #resources :categories
     #categoriesは管理者しか更新しないのでviewやアクションの定義の必要なし
-
+    ##
+    
   resources :habit_records, only: [:update]
     #habit_recordsのindex（habitごとのhabit_recordsの記録）はhabitのshowアクションで表示する。
   resources :users,  except: [:index]

@@ -1,1 +1,0 @@
-メモ：project_todosのviewフォルダは後ほど丸ごと消す
