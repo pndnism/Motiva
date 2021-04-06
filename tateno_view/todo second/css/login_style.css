@@ -1,0 +1,20 @@
+body {
+background-color:#393e46;
+color:white;
+}
+
+.login_btn {
+  background-color:#f8b500 !important;
+  border:0em;
+  border-color:#f8b500;
+  color:white;
+}
+
+.modal-content{
+  background-color:#393e46;
+  color:white; 
+}
+
+a{
+  color:#f8b500;
+}
