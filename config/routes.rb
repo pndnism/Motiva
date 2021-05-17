@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  ActiveAdmin.routes(self)
   get "/" => "home#top"
   get "/top" => "home#top"
   get "/login" =>"home#login"
