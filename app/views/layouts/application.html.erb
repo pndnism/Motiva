@@ -25,7 +25,7 @@
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Motiva</a>
       <p style="color:white ;font-family:cursive" >No one motivates your daily life but you.</p>
-      <div class="user_email"> <%= current_user.email%> </div>
+      <div class="user_email"> メールアドレス</div>
         <ul class="navbar-nav px-3">
           <li class="nav-item text-nowrap">
 
@@ -51,7 +51,7 @@
               <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to '/project_lists', class: "nav-link" do %>
+            <%= link_to '/projects', class: "nav-link" do %>
             <span data-feather="file"></span>  
             WORK          
             <% end %>

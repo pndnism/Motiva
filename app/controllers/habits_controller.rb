@@ -1,6 +1,9 @@
 class HabitsController < ApplicationController
   before_action :set_habit, only: [:show, :edit, :update, :destroy]
 
+  def habituation
+  end
+  
   # GET /habits
   # GET /habits.json
   def index
@@ -60,6 +63,8 @@ class HabitsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
